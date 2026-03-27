@@ -1,0 +1,81 @@
+.experience {
+    padding: 6rem 2rem;
+    background: #f8f9fa;
+  }
+  
+  .experience-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .experience-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .experience-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 1rem;
+  }
+  
+  .experience-header h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .experience-header .company {
+    font-size: 1.1rem;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  
+  .experience-header .location {
+    color: #666;
+    margin-bottom: 0.3rem;
+  }
+  
+  .experience-header .period {
+    color: #888;
+    font-size: 0.9rem;
+  }
+  
+  .experience-content ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .experience-content li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .experience-content li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+  }
+  
+  @media (max-width: 768px) {
+    .experience-card {
+      padding: 1.5rem;
+    }
+    
+    .experience-header h3 {
+      font-size: 1.2rem;
+    }
+  }
