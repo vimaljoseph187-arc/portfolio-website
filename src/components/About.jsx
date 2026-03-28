@@ -18,18 +18,7 @@ const About = () => {
       year: '2017 - 2021',
       gpa: 'GPA: 7.28'
     },
-    {
-      degree: 'HSC - 12th',
-      institution: 'St. John Paul Hr. Sec School',
-      year: '2016 - 2017',
-      gpa: '65%'
-    },
-    {
-      degree: 'SSLC - 10th',
-      institution: 'St. John Paul Hr. Sec School',
-      year: '2014 - 2015',
-      gpa: '87%'
-    }
+    
   ];
 
   return (
