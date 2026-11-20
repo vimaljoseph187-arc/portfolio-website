@@ -1,15 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="SwaQZ3_IVWz7Bysy8V_hUhonX0ZodLkejUNYbcBt6JM" />
-    <title>Vimal J | Freelancer | Full Stack Developer</title>
-    <meta name="description" content="Vimal J Freelancer Full Stack Developer React Python Flask AI Developer Portfolio">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vimal Joseph | Software Developer &amp; AI Application Builder</title>
+<meta name="description" content="Vimal Joseph - Software Developer and AI Application Builder with 4+ years experience in Python, Flask, React, and AI applications. 30+ projects delivered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e14; --panel:#0f1520; --line:#1e2a3a; --text:#cbd5e1; --dim:#64748b;
+    --green:#39ff88; --cyan:#5ce1ff; --pink:#ff5c9d; --amber:#ffc857; --violet:#a78bfa;
+    --mono:'JetBrains Mono',ui-monospace,Consolas,monospace; --display:'Space Grotesk',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:15px;line-height:1.7;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
+    background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 1px,transparent 1px 3px)}
+  #glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;
+    background:radial-gradient(circle,rgba(92,225,255,.10),transparent 65%);transform:translate(-50%,-50%);left:50%;top:30%}
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{color:var(--green)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+
+  /* top bar */
+  header{position:sticky;top:0;z-index:40;background:rgba(10,14,20,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:52px;gap:16px}
+  .dots{display:flex;gap:7px}
+  .dots i{width:11px;height:11px;border-radius:50%;display:block}
+  .dots i:nth-child(1){background:#ff5f56}.dots i:nth-child(2){background:#ffbd2e}.dots i:nth-child(3){background:#27c93f}
+  nav{display:flex;gap:4px;flex-wrap:wrap}
+  nav a{color:var(--dim);padding:4px 10px;border-radius:6px;font-size:13px;border:1px solid transparent}
+  nav a:hover,nav a.active{color:var(--green);border-color:var(--line);background:var(--panel)}
+  nav a::before{content:"./"}
+
+  section{padding:90px 0 20px}
+  .h{font-family:var(--display);font-size:clamp(26px,4vw,36px);color:#fff;margin-bottom:8px;display:flex;align-items:baseline;gap:12px}
+  .h span{color:var(--green);font-family:var(--mono);font-size:.55em}
+  .sub{color:var(--dim);margin-bottom:34px;font-size:13px}
+  .sub::before{content:"// "}
+
+  /* hero */
+  .hero{padding-top:70px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+  .tag{color:var(--green);font-size:13px}
+  h1{font-family:var(--display);font-size:clamp(40px,7vw,76px);line-height:1.02;color:#fff;margin:14px 0 18px;letter-spacing:-1.5px}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--cyan),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .role{font-size:clamp(15px,2vw,19px);min-height:1.8em;color:var(--amber)}
+  .caret{display:inline-block;width:9px;height:1.1em;background:var(--green);vertical-align:-3px;margin-left:3px;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .lead{margin:18px 0 26px;max-width:520px;color:var(--text)}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:11px 20px;border-radius:8px;border:1px solid var(--green);color:var(--green);font-weight:500;transition:.2s;font-family:var(--mono);font-size:14px;background:transparent;cursor:pointer}
+  .btn:hover{background:var(--green);color:#04120a;box-shadow:0 0 24px rgba(57,255,136,.35)}
+  .btn.alt{border-color:var(--line);color:var(--text)}
+  .btn.alt:hover{background:var(--panel);color:var(--cyan);border-color:var(--cyan);box-shadow:none}
+
+  .term{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .term .top{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12px;color:var(--dim)}
+  .term pre{padding:16px 18px;font-family:var(--mono);font-size:13px;line-height:1.75;white-space:pre-wrap;min-height:330px}
+  .k{color:var(--pink)}.s{color:var(--green)}.n{color:var(--amber)}.c{color:var(--dim)}.f{color:var(--cyan)}.v{color:var(--violet)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+  .stat{border:1px solid var(--line);border-radius:10px;padding:18px;background:var(--panel);text-align:center}
+  .stat b{display:block;font-family:var(--display);font-size:34px;color:var(--green)}
+  .stat small{color:var(--dim);font-size:12px}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .box{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:20px;transition:.25s}
+  .box:hover{border-color:var(--cyan);transform:translateY(-3px)}
+  .box h3{font-size:14px;color:var(--cyan);margin-bottom:12px;font-weight:500}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:#0b111a;color:var(--text)}
+  .chip:hover{border-color:var(--green);color:var(--green)}
+
+  /* projects: git log style */
+  .log{position:relative;padding-left:34px}
+  .log::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--green),var(--cyan),var(--violet))}
+  .commit{position:relative;margin-bottom:22px}
+  .commit::before{content:"";position:absolute;left:-31px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--green)}
+  .card{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:20px 22px;transition:.25s}
+  .commit:hover .card{border-color:var(--green);box-shadow:0 0 30px rgba(57,255,136,.08)}
+  .hash{color:var(--amber);font-size:12px}
+  .card h3{font-family:var(--display);font-size:22px;color:#fff;margin:2px 0 6px}
+  .card p{color:var(--text);font-size:14px;margin-bottom:12px}
+  .meta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:12.5px}
+  .feat{border-color:rgba(57,255,136,.4)}
+  .badge{font-size:11px;color:#04120a;background:var(--green);padding:1px 8px;border-radius:4px;font-weight:700;margin-left:8px;vertical-align:middle}
+
+  /* experience */
+  .row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px dashed var(--line)}
+  .row .when{color:var(--amber);font-size:13px}
+  .row h4{color:#fff;font-family:var(--display);font-size:19px}
+  .row p{color:var(--dim);font-size:14px}
+  .row ul{list-style:none;font-size:14px;color:var(--text)}
+  .row li{padding-left:20px;position:relative;margin-bottom:6px}
+  .row li::before{content:"+";position:absolute;left:0;color:var(--green)}
+  .row li b{color:var(--green)}
+
+  /* contact */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .field{display:block;margin-bottom:12px}
+  .field span{color:var(--green);font-size:12px}
+  input,textarea{width:100%;background:#0b111a;border:1px solid var(--line);color:var(--text);padding:10px 12px;border-radius:8px;font-family:var(--mono);font-size:14px;margin-top:4px}
+  input:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(92,225,255,.12)}
+  .links a{display:block;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .links a::before{content:"$ open ";color:var(--dim)}
+  footer{margin-top:80px;padding:26px 0;border-top:1px solid var(--line);color:var(--dim);font-size:12.5px;text-align:center}
+
+  .rv{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  @media(max-width:820px){
+    .hero,.contact{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .row{grid-template-columns:1fr;gap:4px}
+    nav a{padding:4px 7px;font-size:12px}
+    .dots{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+
+<header>
+  <div class="wrap bar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <nav id="nav">
+      <a href="#home" class="active">home</a>
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#experience">experience</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <div id="home" class="hero">
+    <div>
+      <div class="tag">&gt; hello_world.py</div>
+      <h1>I'm <em>Vimal Joseph</em>.</h1>
+      <div class="role"><span id="typed"></span><span class="caret"></span></div>
+      <p class="lead">I build fast, reliable web apps with Python, Flask and React, and I like adding a little AI where it genuinely helps. 4+ years, 30+ projects shipped.</p>
+      <div class="btns">
+        <a class="btn" href="#projects">view_projects()</a>
+        <a class="btn alt" href="#contact">get_in_touch()</a>
+      </div>
+    </div>
+
+    <div class="term">
+      <div class="top"><span>●</span> vimal@dev: ~/profile</div>
+<pre id="code"></pre>
+    </div>
+  </div>
+
+  <div class="stats rv">
+    <div class="stat"><b data-n="4" data-s="+">0</b><small>years experience</small></div>
+    <div class="stat"><b data-n="30" data-s="+">0</b><small>projects delivered</small></div>
+    <div class="stat"><b data-n="40" data-s="%">0</b><small>faster API responses</small></div>
+    <div class="stat"><b data-n="60" data-s="%">0</b><small>fewer data inconsistencies</small></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="rv">
+    <h2 class="h"><span>01</span>about.md</h2>
+    <p class="sub">who is behind the commits</p>
+    <div class="term">
+      <div class="top"><span>●</span> README.md</div>
+<pre><span class="k">#</span> <span class="f">Vimal Joseph</span>
+
+I'm a <span class="s">Software Developer</span> and <span class="s">AI Application Builder</span> with 4+ years
+of experience building web apps, AI-powered solutions and mobile apps.
+I specialise in <span class="s">Flask, React, React Native and MySQL</span>, with a strong focus on
+performance optimisation and secure authentication.
+
+<span class="k">##</span> <span class="f">What I build</span>
+<span class="n">-</span> RESTful APIs that are fast, validated and secure
+<span class="n">-</span> AI apps: voice assistants, video translators and image generators
+<span class="n">-</span> An AI Voice Assistant mobile app in React Native with advanced NLP models
+<span class="n">-</span> End-to-end features across the full SDLC, from UI to database
+
+<span class="k">##</span> <span class="f">Currently</span>
+Software Engineer at <span class="s">Numero Technologies</span>, Coimbatore. I love using AI
+to solve real-world problems.
+
+<span class="k">##</span> <span class="f">Location</span>
+Dindigul, Tamil Nadu, India</pre>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="rv">
+    <h2 class="h"><span>02</span>skills.json</h2>
+    <p class="sub">tools I reach for daily</p>
+    <div class="skills">
+      <div class="box"><h3>"backend": [</h3><div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">REST APIs</span><span class="chip">JWT Auth</span><span class="chip">MySQL</span><span class="chip">WebSockets</span><span class="chip">Query Optimisation</span></div></div>
+      <div class="box"><h3>"frontend": [</h3><div class="chips"><span class="chip">React</span><span class="chip">React Native</span><span class="chip">JavaScript</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Responsive UI</span></div></div>
+      <div class="box"><h3>"ai": [</h3><div class="chips"><span class="chip">AI Agents</span><span class="chip">Voice Assistants</span><span class="chip">NLP Models</span><span class="chip">Video Translation</span><span class="chip">Image Generation</span></div></div>
+      <div class="box"><h3>"tools": [</h3><div class="chips"><span class="chip">Git &amp; GitHub</span><span class="chip">GitHub Actions CI/CD</span><span class="chip">Vercel</span><span class="chip">Postman</span><span class="chip">Log Analysis</span></div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="rv">
+    <h2 class="h"><span>03</span>git log --projects</h2>
+    <p class="sub">a few commits worth showing</p>
+    <div class="log">
+
+      <div class="commit"><div class="card feat">
+        <span class="hash">commit a1f3c9e</span><span class="badge">FEATURED</span>
+        <h3>AI Voice Assistant Mobile App</h3>
+        <p>A mobile voice assistant built with React Native and advanced AI models for natural language processing. It listens, understands and responds in natural language.</p>
+        <div class="meta"><span class="chip">React Native</span><span class="chip">Python</span><span class="chip">NLP</span><a href="https://github.com/vimaljoseph187-arc">[ source ↗ ]</a></div>
+      </div></div>
+
+      <div class="commit"><div class="card feat">
+        <span class="hash">commit 7be42d0</span><span class="badge">FEATURED</span>
+        <h3>Video Translator</h3>
+        <p>Upload a video and get it translated into another language, from transcription through translation to output, wrapped in a simple web UI.</p>
+        <div class="meta"><span class="chip">Python</span><span class="chip">React</span><span class="chip">AI Translation</span><a href="https://github.com/vimaljoseph187-arc">[ source ↗ ]</a></div>
+      </div></div>
+
+      <div class="commit"><div class="card">
+        <span class="hash">commit 5d28e7f</span>
+        <h3>AI Image Generator</h3>
+        <p>A web app that turns text prompts into images using AI models, with a clean React interface and a Flask API behind it.</p>
+        <div class="meta"><span class="chip">Flask</span><span class="chip">React</span><span class="chip">Generative AI</span><a href="https://github.com/vimaljoseph187-arc">[ source ↗ ]</a></div>
+      </div></div>
+
+      <div class="commit"><div class="card feat">
+        <span class="hash">commit e91b4a6</span><span class="badge">FEATURED</span>
+        <h3>AI Agent Creator</h3>
+        <p>A platform where users define an agent's role, instructions and tools, then deploy it to automate tasks and hold conversations, with no code needed.</p>
+        <div class="meta"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">LLM Agents</span><span class="chip">React</span><a href="https://github.com/vimaljoseph187-arc">[ source ↗ ]</a></div>
+      </div></div>
+
+      <div class="commit"><div class="card">
+        <span class="hash">commit b73f02c</span>
+        <h3>Admin Dashboard Creator</h3>
+        <p>A builder that lets teams assemble admin dashboards by choosing data sources, charts, tables and role-based access, then publish them instantly.</p>
+        <div class="meta"><span class="chip">React</span><span class="chip">Flask</span><span class="chip">MySQL</span><span class="chip">JWT Auth</span><a href="https://github.com/vimaljoseph187-arc">[ source ↗ ]</a></div>
+      </div></div>
+
+      <div class="commit"><div class="card">
+        <span class="hash">commit 4a6d18e</span>
+        <h3>Live Tracking System</h3>
+        <p>Real-time location and status tracking on a live map, with instant updates pushed to the dashboard as things move.</p>
+        <div class="meta"><span class="chip">React</span><span class="chip">Flask</span><span class="chip">WebSockets</span><span class="chip">Maps API</span><a href="https://github.com/vimaljoseph187-arc">[ source ↗ ]</a></div>
+      </div></div>
+
+      <div class="commit"><div class="card">
+        <span class="hash">commit 3c90ab1</span>
+        <h3>Full-Stack Business Modules</h3>
+        <p>30+ projects, including scalable Flask and React modules for business workflows, with secure JWT-authenticated APIs and optimised MySQL schemas.</p>
+        <div class="meta"><span class="chip">Flask</span><span class="chip">React</span><span class="chip">MySQL</span><a href="https://github.com/vimaljoseph187-arc">[ github ↗ ]</a></div>
+      </div></div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="rv">
+    <h2 class="h"><span>04</span>experience.log</h2>
+    <p class="sub">where the hours went</p>
+    <div class="row"><div class="when">01/2022 → present</div><div>
+      <h4>Software Engineer, Full-Stack &amp; Backend Systems</h4>
+      <p style="color:var(--cyan);margin-bottom:8px">Numero Technologies · Coimbatore, Tamil Nadu</p>
+      <ul>
+        <li>Designed scalable full-stack modules with Flask and React for multiple business workflows</li>
+        <li>Built secure REST APIs with JWT authentication, validation layers and structured error handling</li>
+        <li>Improved API response time by <b>30-40%</b> through SQL query optimisation, indexing and join refactoring</li>
+        <li>Designed normalised MySQL schemas and data pipelines, cutting data inconsistencies by <b>60%</b> in production</li>
+        <li>Delivered end-to-end features across the full SDLC: UI, backend logic and database persistence</li>
+        <li>Set up CI/CD with GitHub Actions to automate build, test and deployment</li>
+        <li>Resolved live production issues, reducing incident resolution time by <b>50%</b> via log analysis and debugging</li>
+        <li>Worked with cross-functional teams to turn product requirements into scalable solutions</li>
+      </ul>
+    </div></div>
+    <div class="row"><div class="when">2017 → 2021</div><div><h4>B.E. Computer Science Engineering</h4><p style="color:var(--cyan)">Christian College of Engineering and Technology</p><p>GPA: 7.28</p></div></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="rv">
+    <h2 class="h"><span>05</span>contact.sh</h2>
+    <p class="sub">let's build something</p>
+    <div class="contact">
+      <div class="term" style="padding:26px 22px;display:flex;flex-direction:column;justify-content:center;gap:14px">
+        <div class="c" style="font-size:13px">$ ./start_contact.sh</div>
+        <p style="color:var(--text)">Have a project, an idea or a role in mind? Pick the easiest way to reach me.</p>
+        <a class="btn" style="text-align:center" href="https://wa.me/917604919481?text=Hi%20Vimal%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener">start_whatsapp_chat()</a>
+        <a class="btn alt" style="text-align:center" href="mailto:vimaljoseph187@gmail.com?subject=Portfolio%20enquiry&body=Hi%20Vimal%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20connect.">start_mail()</a>
+      </div>
+      <div class="links">
+        <p style="color:var(--dim);margin-bottom:10px">Prefer a direct line?</p>
+        <a href="mailto:vimaljoseph187@gmail.com">vimaljoseph187@gmail.com</a>
+        <a href="https://wa.me/917604919481?text=Hi%20Vimal%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener">WhatsApp chat: +91 76049 19481</a>
+        <a href="tel:+917604919481">+91 76049 19481</a>
+        <a href="https://github.com/vimaljoseph187-arc">github.com/vimaljoseph187-arc</a>
+        <a href="https://www.linkedin.com/in/vimal-j-profile/">linkedin.com/in/vimal-j-profile</a>
+        <p style="color:var(--dim);margin-top:14px">📍 Dindigul, Tamil Nadu, India</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>© <span id="yr"></span> Vimal Joseph · hand-coded, no frameworks harmed · <span class="s">exit code 0</span></footer>
+</main>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // cursor glow
+  const glow = document.getElementById('glow');
+  addEventListener('pointermove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
+
+  // typed role
+  const roles = ['Software Developer','AI Application Builder','Python Full-Stack Engineer','Flask + React Builder'];
+  const t = document.getElementById('typed');
+  let ri = 0, ci = 0, del = false;
+  (function tick(){
+    const w = roles[ri];
+    t.textContent = w.slice(0, ci);
+    if(!del && ci === w.length){ del = true; return setTimeout(tick, 1400); }
+    if(del && ci === 0){ del = false; ri = (ri + 1) % roles.length; }
+    ci += del ? -1 : 1;
+    setTimeout(tick, del ? 28 : 65);
+  })();
+
+  // terminal profile
+  const lines = [
+    '<span class="c"># profile.py</span>',
+    '<span class="k">class</span> <span class="f">Developer</span>:',
+    '    name   = <span class="s">"Vimal Joseph"</span>',
+    '    role   = <span class="s">"Software Developer"</span>',
+    '    focus  = <span class="s">"AI Application Builder"</span>',
+    '    at     = <span class="s">"Numero Technologies"</span>',
+    '    stack  = [<span class="s">"Python"</span>, <span class="s">"Flask"</span>, <span class="s">"React"</span>, <span class="s">"AI"</span>]',
+    '    years  = <span class="n">4</span>',
+    '    shipped = <span class="n">30</span>',
+    '    open_to_work = <span class="v">True</span>',
+    '',
+    '    <span class="k">def</span> <span class="f">build</span>(self, idea):',
+    '        <span class="k">return</span> self.design(idea).code().deploy()',
+    '',
+    '<span class="s">&gt;&gt;&gt;</span> Developer().build(<span class="s">"your idea"</span>)',
+    '<span class="c">Deployed ✔  See you in production.</span>'
+  ];
+  const code = document.getElementById('code');
+  let li = 0;
+  (function type(){
+    if(li >= lines.length) return;
+    code.innerHTML += lines[li++] + '\n';
+    setTimeout(type, 260);
+  })();
+
+  // reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(x => { if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } }), {threshold:.12});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // counters
+  const co = new IntersectionObserver(es => es.forEach(x => {
+    if(!x.isIntersecting) return;
+    co.unobserve(x.target);
+    const el = x.target, max = +el.dataset.n, s = el.dataset.s; let v = 0;
+    const step = Math.max(1, Math.ceil(max / 40));
+    const id = setInterval(() => { v = Math.min(max, v + step); el.textContent = v + s; if(v >= max) clearInterval(id); }, 30);
+  }), {threshold:.6});
+  document.querySelectorAll('[data-n]').forEach(el => co.observe(el));
+
+  // active nav
+  const links = [...document.querySelectorAll('#nav a')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  addEventListener('scroll', () => {
+    let cur = 0;
+    secs.forEach((s, i) => { if(s && s.getBoundingClientRect().top < 140) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('active', i === cur));
+  }, {passive:true});
+
+</script>
+</body>
 </html>
